@@ -22,7 +22,13 @@ jobs:
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
-        with:
+
+      - name: Deploy application
+        run: |
+          mkdir -p deploy
+          unzip -o app.zip -d deploy
+          ls -la deploy
+          with:
           name: python-app
           path: app.zip
 
