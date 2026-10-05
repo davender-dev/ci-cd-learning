@@ -21,6 +21,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Check Azure Client ID
+        shell: bash
+        run: |
+          CLIENT_ID="${{ secrets.AZURE_CLIENT_ID }}"
+          echo "Client ID ends with: ${CLIENT_ID: -4}"
+
       - name: Azure Login
         uses: azure/login@v2
         with:
