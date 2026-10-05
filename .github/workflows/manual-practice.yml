@@ -2,6 +2,11 @@ name: Manual Practice
 
 on:
   workflow_dispatch:
+    inputs:
+      environment:
+        description: "Select environment"
+        required: true
+        default: "dev"
 
 jobs:
   practice:
@@ -11,5 +16,5 @@ jobs:
       - name: Start
         run: echo "Manual pipeline started"
 
-      - name: Show message
-        run: echo "CI/CD practice is running"
+      - name: Show environment
+        run: echo "Environment is ${{ inputs.environment }}"
