@@ -1,0 +1,24 @@
+name: Alert Management
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "Alert action"
+        required: true
+        type: choice
+        options:
+          - disable
+          - enable
+        default: disable
+
+jobs:
+  alert-management:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show selected action
+        run: |
+          echo "Alert Management Pipeline"
+          echo "Action: ${{ inputs.action }}"
+          echo "Alert: CI-CD-Transactions-Test"
