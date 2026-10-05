@@ -12,6 +12,10 @@ on:
           - enable
         default: disable
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   alert-management:
     runs-on: ubuntu-latest
